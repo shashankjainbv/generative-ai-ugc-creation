@@ -12,7 +12,7 @@ public class Constants {
 
     public static final int MAX_TOKENS = 1000;
 
-    public static final String ROLE="user";
+    public static final String ROLE = "user";
     public static final String ACCEPT = "Accept";
     public static final String APPLICATION_JSON = "application/json";
     public static final String CONTENT_TYPE = "content-type";
