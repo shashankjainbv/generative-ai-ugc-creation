@@ -12,7 +12,8 @@ import org.springframework.stereotype.Component;
 public class AppProperties {
     private String profile;
     private String region;
-    private String keyName;
+    private String secretName;
     private String host;
     private String protocol;
+    private Boolean isLocal;
 }

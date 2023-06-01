@@ -34,9 +34,7 @@ public class ResourceService {
 
     public ReviewTipResponse getReviewTipsBased(String passkey, String id) throws IOException {
         Map<String, String> productInfoMap = getProductInfo(passkey, id);
-
         return getGPTResponse(productInfoMap.get("productName"), productInfoMap.get("brandName"));
-
     }
 
     private Map<String, String> getProductInfo(String passkey, String id) {
@@ -76,7 +74,7 @@ public class ResourceService {
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(OPENAPI_URL);
-        String secretValue = SecretManager.getSecretValue(appProperties.getKeyName(), appProperties.getProfile(), appProperties.getRegion());
+        String secretValue = SecretManager.getSecretValue(appProperties.getSecretName(), appProperties.getProfile(), appProperties.getRegion(), appProperties.getIsLocal());
 
         String inputText = String.format(PROMPT_INPUT, productName, brandName);
 
