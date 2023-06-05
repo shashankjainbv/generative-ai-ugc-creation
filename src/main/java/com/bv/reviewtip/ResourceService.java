@@ -66,9 +66,9 @@ public class ResourceService {
     private ReviewTipResponse getGPTResponse(String productName, String brandName) throws IOException {
         ReviewTipResponse response = null;
 
-        if (productName.isEmpty() || brandName.isEmpty()) {
-            log.error("Either product name or brand name is not present in the api response.");
-            response = new ReviewTipResponse("Either product name or brand name is not present in the api response.", "", 400);
+        if (productName.isEmpty()) {
+            log.error("Product name is not present in the api response.");
+            response = new ReviewTipResponse("Product name is not present in the api response.", "", 400);
             return response;
         }
 
