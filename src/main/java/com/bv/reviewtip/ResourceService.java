@@ -35,6 +35,10 @@ public class ResourceService {
 
     public ReviewTipResponse getReviewTipsBased(String passkey, String id) throws IOException {
         Map<String, String> productInfoMap = getProductInfo(passkey, id);
+        if (productInfoMap.isEmpty()) {
+            log.error("Requested product id is not present or doesnt have any information. Please check if the product id is valid.");
+            return new ReviewTipResponse("Requested product id is not present or doesnt have any information. Please check if the product id is valid.", "", 400);
+        }
         return getGPTResponse(productInfoMap.get("productName"), productInfoMap.get("brandName"));
     }
 
@@ -54,8 +58,10 @@ public class ResourceService {
             Map<String, Object> apiResponse = JsonUtils.jsonToMap(responseBody);
             List<Object> results = navigate(apiResponse, "Results");
 
-            productInfoMap.put("productName", navigateOrDefault("", results.get(0), "Name"));
-            productInfoMap.put("brandName", navigateOrDefault("", results.get(0), "Brand", "Name"));
+            if (results.size() > 0) {
+                productInfoMap.put("productName", navigateOrDefault("", results.get(0), "Name"));
+                productInfoMap.put("brandName", navigateOrDefault("", results.get(0), "Brand", "Name"));
+            }
 
             return productInfoMap;
         } catch (Exception exception) {
