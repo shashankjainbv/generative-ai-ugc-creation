@@ -15,6 +15,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -66,7 +67,7 @@ public class ResourceService {
     private ReviewTipResponse getGPTResponse(String productName, String brandName) throws IOException {
         ReviewTipResponse response = null;
 
-        if (productName.isEmpty()) {
+        if (StringUtils.isEmpty(productName)) {
             log.error("Product name is not present in the api response.");
             response = new ReviewTipResponse("Product name is not present in the api response.", "", 400);
             return response;
