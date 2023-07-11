@@ -1,4 +1,4 @@
-package com.bv.reviewtip;
+package com.bv.textcompletion;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

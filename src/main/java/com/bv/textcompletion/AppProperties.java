@@ -1,4 +1,4 @@
-package com.bv.reviewtip;
+package com.bv.textcompletion;
 
 import lombok.Getter;
 import lombok.Setter;

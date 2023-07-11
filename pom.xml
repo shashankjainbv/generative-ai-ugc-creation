@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bv</groupId>
-	<artifactId>generative-ai-api</artifactId>
+	<artifactId>generative-ai-ugc-creation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>generative-ai-api</name>
+	<name>generative-ai-ugc-creation</name>
 	<description>This project will generate review tips and question answers using OpenApi</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -20,6 +20,23 @@
 		<httpclient.version>4.5.13</httpclient.version>
 	</properties>
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>JSON</artifactId>
+			<version>20080701</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.1.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>

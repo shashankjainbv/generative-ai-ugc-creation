@@ -1,4 +1,4 @@
-package com.bv.reviewtip;
+package com.bv.textcompletion;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReviewTipResponse {
+public class GPTResponse {
     private String error;
     private String data;
     private int status;

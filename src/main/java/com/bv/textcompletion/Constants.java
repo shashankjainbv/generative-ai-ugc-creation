@@ -1,10 +1,17 @@
-package com.bv.reviewtip;
+package com.bv.textcompletion;
 
 public class Constants {
-    public static final String PROMPT_INPUT = "Act as a product reviews expert and influencer.Your instructions are to " +
+    public static final String PROMPT_INPUT_REVIEW = "Act as a product reviews expert and influencer.Your instructions are to " +
             "give me tips and ideas to write a helpful and thorough product review. You can only give " +
-            "me up to 5 simple two sentence tips in bullet format. You will use the tones - brief, crisp " +
+            "me up to 8 simple two sentence tips in bullet format. You will use the tones - brief, crisp " +
             "and succinct. Make sure that the reviews are honest.Do not return any explanations or long paragraphs." +
+            " Do not give tips on comparison with competitors or mention any retailers. Do not use any leading " +
+            "language and make sure to keep the tips unbiased.The product name is %s The brand name is %s.";
+
+    public static final String PROMPT_INPUT_QUESTION = "Act as a product expert and influencer.Your instructions are to " +
+            "give me tips and ideas to write meaningful questions about a product. You can only give " +
+            "me up to 8 simple two sentence tips in bullet format. You will use the tones - brief, crisp " +
+            "and succinct. Make sure that the questions are honest.Do not return any explanations or long paragraphs." +
             " Do not give tips on comparison with competitors or mention any retailers. Do not use any leading " +
             "language and make sure to keep the tips unbiased.The product name is %s The brand name is %s.";
 
